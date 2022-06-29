@@ -16,7 +16,7 @@ config :to_do_app, ToDoApp.Repo,
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :to_do_app, ToDoAppWeb.Endpoint,
-  http: [ip: {127, 0, 0, 1}, port: 4002],
+  http: [ip: {0, 0, 0, 0}, port: 4000],
   secret_key_base: "eU+CqWX5Ym+usdRqP/vgsAxg+zCiQLVYhfvEctgSq0xfFpvjU3iIADtabMBuQwMR",
   server: false
 

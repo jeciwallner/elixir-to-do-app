@@ -2,9 +2,11 @@ import Config
 
 # Configure your database
 config :to_do_app, ToDoApp.Repo,
+  adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
+  port: 5432,
   database: "to_do_app_dev",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -25,8 +27,7 @@ config :to_do_app, ToDoAppWeb.Endpoint,
   secret_key_base: "wDLO2NtsOlFO1F0XS/+JsVMkL+lHAxhvkgaEY59F8n0KbCJmVRP0RO/DFHZDcl5C",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
   ]
 
 # ## SSL Support
@@ -43,7 +44,7 @@ config :to_do_app, ToDoAppWeb.Endpoint,
 # The `http:` config above can be replaced with:
 #
 #     https: [
-#       port: 4001,
+#       port: 4000,
 #       cipher_suite: :strong,
 #       keyfile: "priv/cert/selfsigned_key.pem",
 #       certfile: "priv/cert/selfsigned.pem"
